@@ -32,12 +32,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.url_sure = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.download = new System.Windows.Forms.Button();
+            this.all_select = new System.Windows.Forms.Button();
             this.global_list = new System.Windows.Forms.ListView();
             this.list_select = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.all_select = new System.Windows.Forms.Button();
-            this.download = new System.Windows.Forms.Button();
+            this.only_thunder_select = new System.Windows.Forms.Button();
+            this.only_magnet_select = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +73,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.only_magnet_select);
+            this.panel1.Controls.Add(this.only_thunder_select);
             this.panel1.Controls.Add(this.download);
             this.panel1.Controls.Add(this.all_select);
             this.panel1.Controls.Add(this.global_list);
@@ -78,6 +82,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 396);
             this.panel1.TabIndex = 4;
+            // 
+            // download
+            // 
+            this.download.Location = new System.Drawing.Point(542, 366);
+            this.download.Name = "download";
+            this.download.Size = new System.Drawing.Size(56, 27);
+            this.download.TabIndex = 56;
+            this.download.Text = "下载";
+            this.download.UseVisualStyleBackColor = true;
+            this.download.Click += new System.EventHandler(this.download_Click);
+            // 
+            // all_select
+            // 
+            this.all_select.Location = new System.Drawing.Point(91, 366);
+            this.all_select.Name = "all_select";
+            this.all_select.Size = new System.Drawing.Size(56, 27);
+            this.all_select.TabIndex = 55;
+            this.all_select.Text = "全选";
+            this.all_select.UseVisualStyleBackColor = true;
+            this.all_select.Click += new System.EventHandler(this.all_select_Click);
             // 
             // global_list
             // 
@@ -113,25 +137,25 @@
             this.list_url.Text = "链接";
             this.list_url.Width = 590;
             // 
-            // all_select
+            // only_thunder_select
             // 
-            this.all_select.Location = new System.Drawing.Point(91, 366);
-            this.all_select.Name = "all_select";
-            this.all_select.Size = new System.Drawing.Size(56, 27);
-            this.all_select.TabIndex = 55;
-            this.all_select.Text = "全选";
-            this.all_select.UseVisualStyleBackColor = true;
-            this.all_select.Click += new System.EventHandler(this.all_select_Click);
+            this.only_thunder_select.Location = new System.Drawing.Point(178, 366);
+            this.only_thunder_select.Name = "only_thunder_select";
+            this.only_thunder_select.Size = new System.Drawing.Size(138, 27);
+            this.only_thunder_select.TabIndex = 57;
+            this.only_thunder_select.Text = "只选thunder链接";
+            this.only_thunder_select.UseVisualStyleBackColor = true;
+            this.only_thunder_select.Click += new System.EventHandler(this.only_select_Click);
             // 
-            // download
+            // only_magnet_select
             // 
-            this.download.Location = new System.Drawing.Point(542, 366);
-            this.download.Name = "download";
-            this.download.Size = new System.Drawing.Size(56, 27);
-            this.download.TabIndex = 56;
-            this.download.Text = "下载";
-            this.download.UseVisualStyleBackColor = true;
-            this.download.Click += new System.EventHandler(this.download_Click);
+            this.only_magnet_select.Location = new System.Drawing.Point(357, 366);
+            this.only_magnet_select.Name = "only_magnet_select";
+            this.only_magnet_select.Size = new System.Drawing.Size(138, 27);
+            this.only_magnet_select.TabIndex = 58;
+            this.only_magnet_select.Text = "只选magnet链接";
+            this.only_magnet_select.UseVisualStyleBackColor = true;
+            this.only_magnet_select.Click += new System.EventHandler(this.only_select_Click);
             // 
             // 迅雷下载地址抓取器
             // 
@@ -162,6 +186,8 @@
         private System.Windows.Forms.ColumnHeader list_url;
         private System.Windows.Forms.Button download;
         private System.Windows.Forms.Button all_select;
+        private System.Windows.Forms.Button only_magnet_select;
+        private System.Windows.Forms.Button only_thunder_select;
     }
 }
 

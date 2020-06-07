@@ -44,7 +44,7 @@ namespace thunder_link_catch
                         break;
                     }
                 }
-                if(href.Contains("thunder://") && j >= global_list.Items.Count)
+                if((href.Contains("thunder://") || href.Contains("magnet:?xt=")) && j >= global_list.Items.Count)
                 {
                     String plain_text_value = textnode.ToPlainTextString();
                     ListViewItem item = new ListViewItem();
@@ -65,10 +65,28 @@ namespace thunder_link_catch
 
         private void all_select_Click(object sender, EventArgs e)
         {
-           for(int j = 0;j< global_list.Items.Count; j++)
-           {
-                global_list.Items[j].Checked = true;
-           }
+            int check_counter = 0;
+            for (int j = 0; j < global_list.Items.Count; j++)
+            {
+                if (global_list.Items[j].Checked)
+                {
+                    check_counter++;
+                }
+            }
+            if (check_counter >= global_list.Items.Count)
+            {
+                for (int j = 0; j < global_list.Items.Count; j++)
+                {
+                    global_list.Items[j].Checked = false;
+                }
+            }
+            else
+            {
+                for (int j = 0; j < global_list.Items.Count; j++)
+                {
+                    global_list.Items[j].Checked = true;
+                }
+            }
         }
 
         private void download_Click(object sender, EventArgs e)
@@ -84,6 +102,52 @@ namespace thunder_link_catch
            }
            Clipboard.SetDataObject(download_url);
             MessageBox.Show("已复制到剪贴板!");
+        }
+
+        private void only_select_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string select_str = "";
+            switch(btn.Name)
+            {
+                case "only_magnet_select":
+                    select_str = "magnet:?xt=";
+                    break;
+                case "only_thunder_select":
+                    select_str = "thunder://";
+                    break;
+                default:
+                    break;
+            }
+            List<int> index = new List<int>();
+            int counter = 0;
+            for(int j = 0;j< global_list.Items.Count; j++)
+           {
+                if(global_list.Items[j].SubItems[2].Text.Contains(select_str))
+                {
+                    index.Add(j);
+                }else
+                {
+                    if(global_list.Items[j].Checked )
+                    {
+                        counter++;
+                    }
+                    global_list.Items[j].Checked = false;
+                }
+           }
+            if(counter > 0)
+            {
+                for (int j = 0; j < index.Count; j++)
+                {
+                    global_list.Items[index[j]].Checked = true;
+                }
+            }else
+            {
+                for (int j = 0; j < index.Count; j++)
+                {
+                    global_list.Items[index[j]].Checked = !global_list.Items[index[j]].Checked;
+                }
+            }
         }
     }
 }
