@@ -1,0 +1,37 @@
+{
+  "name": "thunder_link_catcher",
+  "version": "0.0.1",
+  "description": "迅雷链接抓取器",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "commitizen": "^4.1.2",
+    "conventional-changelog-cli": "^2.0.34",
+    "conventional-gitlab-releaser": "^4.0.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "npm-check-updates": "^6.0.1",
+    "standard-changelog": "^2.0.24",
+    "standard-version": "^8.0.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "conventional-gitlab-releaser -p angular -r 0 -u https://git.fulong.me/api/v4/ -t $TOKEN",
+    "release-new": "conventional-gitlab-releaser -p angular -u https://git.fulong.me/api/v4/ -t $TOKEN",
+    "version": "standard-version",
+    "commit": "git cz"
+  },
+  "author": "fulong",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+http://git.fulong.me/tools/thunder_link_catcher.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

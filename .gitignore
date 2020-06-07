@@ -1,0 +1,6 @@
+.vs
+packages
+thunder_link_catch/bin
+thunder_link_catch/obj
+node_modules/
+package-lock.json
