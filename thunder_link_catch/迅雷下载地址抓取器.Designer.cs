@@ -32,14 +32,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.url_sure = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.only_magnet_select = new System.Windows.Forms.Button();
+            this.only_thunder_select = new System.Windows.Forms.Button();
             this.download = new System.Windows.Forms.Button();
             this.all_select = new System.Windows.Forms.Button();
             this.global_list = new System.Windows.Forms.ListView();
             this.list_select = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.only_thunder_select = new System.Windows.Forms.Button();
-            this.only_magnet_select = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 396);
             this.panel1.TabIndex = 4;
+            // 
+            // only_magnet_select
+            // 
+            this.only_magnet_select.Location = new System.Drawing.Point(357, 366);
+            this.only_magnet_select.Name = "only_magnet_select";
+            this.only_magnet_select.Size = new System.Drawing.Size(138, 27);
+            this.only_magnet_select.TabIndex = 58;
+            this.only_magnet_select.Text = "只选magnet链接";
+            this.only_magnet_select.UseVisualStyleBackColor = true;
+            this.only_magnet_select.Click += new System.EventHandler(this.only_select_Click);
+            // 
+            // only_thunder_select
+            // 
+            this.only_thunder_select.Location = new System.Drawing.Point(178, 366);
+            this.only_thunder_select.Name = "only_thunder_select";
+            this.only_thunder_select.Size = new System.Drawing.Size(138, 27);
+            this.only_thunder_select.TabIndex = 57;
+            this.only_thunder_select.Text = "只选thunder链接";
+            this.only_thunder_select.UseVisualStyleBackColor = true;
+            this.only_thunder_select.Click += new System.EventHandler(this.only_select_Click);
             // 
             // download
             // 
@@ -137,26 +157,6 @@
             this.list_url.Text = "链接";
             this.list_url.Width = 590;
             // 
-            // only_thunder_select
-            // 
-            this.only_thunder_select.Location = new System.Drawing.Point(178, 366);
-            this.only_thunder_select.Name = "only_thunder_select";
-            this.only_thunder_select.Size = new System.Drawing.Size(138, 27);
-            this.only_thunder_select.TabIndex = 57;
-            this.only_thunder_select.Text = "只选thunder链接";
-            this.only_thunder_select.UseVisualStyleBackColor = true;
-            this.only_thunder_select.Click += new System.EventHandler(this.only_select_Click);
-            // 
-            // only_magnet_select
-            // 
-            this.only_magnet_select.Location = new System.Drawing.Point(357, 366);
-            this.only_magnet_select.Name = "only_magnet_select";
-            this.only_magnet_select.Size = new System.Drawing.Size(138, 27);
-            this.only_magnet_select.TabIndex = 58;
-            this.only_magnet_select.Text = "只选magnet链接";
-            this.only_magnet_select.UseVisualStyleBackColor = true;
-            this.only_magnet_select.Click += new System.EventHandler(this.only_select_Click);
-            // 
             // 迅雷下载地址抓取器
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -167,7 +167,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.url);
             this.Name = "迅雷下载地址抓取器";
-            this.Text = "迅雷下载链接抓取器v0.0.1";
+            this.Text = "迅雷下载链接抓取器v0.0.2";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
