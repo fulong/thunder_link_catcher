@@ -32,6 +32,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.url_sure = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.only_ftp_select = new System.Windows.Forms.Button();
             this.only_magnet_select = new System.Windows.Forms.Button();
             this.only_thunder_select = new System.Windows.Forms.Button();
             this.download = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.list_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.html_import = new System.Windows.Forms.Button();
-            this.only_ftp_select = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(806, 396);
             this.panel1.TabIndex = 4;
+            // 
+            // only_ftp_select
+            // 
+            this.only_ftp_select.Location = new System.Drawing.Point(466, 366);
+            this.only_ftp_select.Name = "only_ftp_select";
+            this.only_ftp_select.Size = new System.Drawing.Size(138, 27);
+            this.only_ftp_select.TabIndex = 59;
+            this.only_ftp_select.Text = "只选ftp链接";
+            this.only_ftp_select.UseVisualStyleBackColor = true;
+            this.only_ftp_select.Click += new System.EventHandler(this.only_select_Click);
             // 
             // only_magnet_select
             // 
@@ -170,16 +180,6 @@
             this.html_import.UseVisualStyleBackColor = true;
             this.html_import.Click += new System.EventHandler(this.html_import_Click);
             // 
-            // only_ftp_select
-            // 
-            this.only_ftp_select.Location = new System.Drawing.Point(466, 366);
-            this.only_ftp_select.Name = "only_ftp_select";
-            this.only_ftp_select.Size = new System.Drawing.Size(138, 27);
-            this.only_ftp_select.TabIndex = 59;
-            this.only_ftp_select.Text = "只选ftp链接";
-            this.only_ftp_select.UseVisualStyleBackColor = true;
-            this.only_ftp_select.Click += new System.EventHandler(this.only_select_Click);
-            // 
             // 迅雷下载地址抓取器
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -191,7 +191,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.url);
             this.Name = "迅雷下载地址抓取器";
-            this.Text = "迅雷下载链接抓取器v0.0.2";
+            this.Text = "迅雷下载链接抓取器v0.0.3";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
