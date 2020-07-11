@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -21,10 +22,8 @@ namespace thunder_link_catch
         {
             InitializeComponent();
         }
-
-        private void url_sure_Click(object sender, EventArgs e)
+        public void html_parse(string html)
         {
-            string html = Program.http_request(url.Text);
             Parser parser = Parser.CreateParser(html, "utf-8");
             //筛选要查找的对象 这里查找td，封装成过滤器
             NodeFilter filter = new TagNameFilter("a");
@@ -44,7 +43,7 @@ namespace thunder_link_catch
                         break;
                     }
                 }
-                if((href.Contains("thunder://") || href.Contains("magnet:?xt=")) && j >= global_list.Items.Count)
+                if((href.Contains("thunder://") || href.Contains("magnet:?xt=") ||  href.Contains("ftp://") ) && j >= global_list.Items.Count)
                 {
                     String plain_text_value = textnode.ToPlainTextString();
                     ListViewItem item = new ListViewItem();
@@ -55,6 +54,12 @@ namespace thunder_link_catch
                     global_list.EndUpdate();
                 }
             }        
+        }
+
+        private void url_sure_Click(object sender, EventArgs e)
+        {
+            string html = Program.http_request(url.Text);
+            html_parse(html);
         }
         private static ITag getTag(INode node)
         {
@@ -116,6 +121,9 @@ namespace thunder_link_catch
                 case "only_thunder_select":
                     select_str = "thunder://";
                     break;
+                case "only_ftp_select":
+                    select_str = "ftp://";
+                    break;
                 default:
                     break;
             }
@@ -147,6 +155,21 @@ namespace thunder_link_catch
                 {
                     global_list.Items[index[j]].Checked = !global_list.Items[index[j]].Checked;
                 }
+            }
+        }
+
+        private void html_import_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog=new OpenFileDialog();
+            openFileDialog.Filter="html文件|*.html";
+            openFileDialog.RestoreDirectory=true;
+            openFileDialog.FilterIndex=1;
+            if (openFileDialog.ShowDialog()==DialogResult.OK)
+            {
+                string html;
+                string fName=openFileDialog.FileName;
+                html = File.ReadAllText(fName);
+                html_parse(html);
             }
         }
     }
