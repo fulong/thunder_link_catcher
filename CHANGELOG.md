@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](http://git.fulong.me/tools/thunder_link_catcher/compare/v0.0.2...v0.0.3) (2020-07-11)
+
+
+### Features
+
+* **功能增强:** 1.支持选取ftp链接 2.增加ftp全选按钮 3.有时候编码不对可进行导入html方式获取下载链接 ([8b34bd5](http://git.fulong.me/tools/thunder_link_catcher/commit/8b34bd532f0711375abe64efb854aecf6338b7eb))
+
 ### [0.0.2](http://git.fulong.me/tools/thunder_link_catcher/compare/v0.0.1...v0.0.2) (2020-06-07)
 
 
