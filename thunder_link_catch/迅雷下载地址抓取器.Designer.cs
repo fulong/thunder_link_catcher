@@ -214,7 +214,7 @@
             this.Controls.Add(this.url);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "迅雷下载地址抓取器";
-            this.Text = "迅雷下载链接抓取器v0.0.3";
+            this.Text = "迅雷下载链接抓取器v0.0.4";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
