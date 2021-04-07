@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](http://git.fulong.me/tools/thunder_link_catcher/compare/v0.0.3...v0.0.4) (2021-04-07)
+
+
+### Features
+
+* **业务:** 1.修复可能的崩溃 2.增加ed2k链接选择 3.修复可能的编码问题 ([bb3ebd2](http://git.fulong.me/tools/thunder_link_catcher/commit/bb3ebd250895a22f5f54f532f36c0e1a78ad06de))
+
 ### [0.0.3](http://git.fulong.me/tools/thunder_link_catcher/compare/v0.0.2...v0.0.3) (2020-07-11)
 
 

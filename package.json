@@ -1,6 +1,6 @@
 {
   "name": "thunder_link_catcher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "迅雷链接抓取器",
   "main": "index.js",
   "directories": {
