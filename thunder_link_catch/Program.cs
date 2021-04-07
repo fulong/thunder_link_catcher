@@ -22,7 +22,7 @@ namespace thunder_link_catch
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new 迅雷下载地址抓取器());
         }
-        public static string http_request(string url, string method = "GET", string contenttype = "application/json;charset=utf-8", Hashtable header = null, string data = null)
+        public static string http_request(string url,string encode="gbk", string method = "GET", string contenttype = "application/json;charset=utf-8", Hashtable header = null, string data = null)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = string.IsNullOrEmpty(method) ? "GET" : method;
@@ -43,7 +43,7 @@ namespace thunder_link_catch
             }
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream ResponseStream = response.GetResponseStream();
-            StreamReader StreamReader = new StreamReader(ResponseStream, Encoding.GetEncoding("utf-8"));
+            StreamReader StreamReader = new StreamReader(ResponseStream, Encoding.GetEncoding(encode));
             string re = StreamReader.ReadToEnd();
             StreamReader.Close();
             ResponseStream.Close();

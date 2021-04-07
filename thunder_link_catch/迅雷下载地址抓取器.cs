@@ -36,6 +36,10 @@ namespace thunder_link_catch
                 INode textnode = nodes[i];
                 ITag tag = (ITag)textnode;
                 String href = tag.GetAttribute("href");
+                if (href == null)
+                {
+                    continue;
+                }
                 for(j = 0;j< global_list.Items.Count; j++)
                 {
                     if(global_list.Items[j].SubItems[2].Text.Contains(href))
@@ -43,7 +47,7 @@ namespace thunder_link_catch
                         break;
                     }
                 }
-                if((href.Contains("thunder://") || href.Contains("magnet:?xt=") ||  href.Contains("ftp://") ) && j >= global_list.Items.Count)
+                if((href.Contains("thunder://") || href.Contains("magnet:?xt=") ||  href.Contains("ftp://") || href.Contains("ed2k://")) && j >= global_list.Items.Count)
                 {
                     String plain_text_value = textnode.ToPlainTextString();
                     ListViewItem item = new ListViewItem();
@@ -123,6 +127,9 @@ namespace thunder_link_catch
                     break;
                 case "only_ftp_select":
                     select_str = "ftp://";
+                    break;
+                case "only_ed2k_select":
+                    select_str = "ed2k://";
                     break;
                 default:
                     break;

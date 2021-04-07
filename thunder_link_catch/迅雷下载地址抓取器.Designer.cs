@@ -32,6 +32,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.url_sure = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.only_ed2k_select = new System.Windows.Forms.Button();
             this.only_ftp_select = new System.Windows.Forms.Button();
             this.only_magnet_select = new System.Windows.Forms.Button();
             this.only_thunder_select = new System.Windows.Forms.Button();
@@ -47,27 +48,30 @@
             // 
             // url
             // 
-            this.url.Location = new System.Drawing.Point(87, 11);
+            this.url.Location = new System.Drawing.Point(65, 9);
+            this.url.Margin = new System.Windows.Forms.Padding(2);
             this.url.Name = "url";
-            this.url.Size = new System.Drawing.Size(580, 25);
+            this.url.Size = new System.Drawing.Size(436, 21);
             this.url.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(0, 15);
+            this.textBox2.Location = new System.Drawing.Point(0, 12);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(81, 18);
+            this.textBox2.Size = new System.Drawing.Size(61, 14);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "页面地址";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // url_sure
             // 
-            this.url_sure.Location = new System.Drawing.Point(673, 11);
+            this.url_sure.Location = new System.Drawing.Point(505, 9);
+            this.url_sure.Margin = new System.Windows.Forms.Padding(2);
             this.url_sure.Name = "url_sure";
-            this.url_sure.Size = new System.Drawing.Size(56, 27);
+            this.url_sure.Size = new System.Drawing.Size(42, 22);
             this.url_sure.TabIndex = 2;
             this.url_sure.Text = "确定";
             this.url_sure.UseVisualStyleBackColor = true;
@@ -75,22 +79,36 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.only_ed2k_select);
             this.panel1.Controls.Add(this.only_ftp_select);
             this.panel1.Controls.Add(this.only_magnet_select);
             this.panel1.Controls.Add(this.only_thunder_select);
             this.panel1.Controls.Add(this.download);
             this.panel1.Controls.Add(this.all_select);
             this.panel1.Controls.Add(this.global_list);
-            this.panel1.Location = new System.Drawing.Point(12, 45);
+            this.panel1.Location = new System.Drawing.Point(9, 36);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 396);
+            this.panel1.Size = new System.Drawing.Size(604, 317);
             this.panel1.TabIndex = 4;
+            // 
+            // only_ed2k_select
+            // 
+            this.only_ed2k_select.Location = new System.Drawing.Point(380, 293);
+            this.only_ed2k_select.Margin = new System.Windows.Forms.Padding(2);
+            this.only_ed2k_select.Name = "only_ed2k_select";
+            this.only_ed2k_select.Size = new System.Drawing.Size(104, 22);
+            this.only_ed2k_select.TabIndex = 60;
+            this.only_ed2k_select.Text = "只选ed2k链接";
+            this.only_ed2k_select.UseVisualStyleBackColor = true;
+            this.only_ed2k_select.Click += new System.EventHandler(this.only_select_Click);
             // 
             // only_ftp_select
             // 
-            this.only_ftp_select.Location = new System.Drawing.Point(466, 366);
+            this.only_ftp_select.Location = new System.Drawing.Point(272, 293);
+            this.only_ftp_select.Margin = new System.Windows.Forms.Padding(2);
             this.only_ftp_select.Name = "only_ftp_select";
-            this.only_ftp_select.Size = new System.Drawing.Size(138, 27);
+            this.only_ftp_select.Size = new System.Drawing.Size(104, 22);
             this.only_ftp_select.TabIndex = 59;
             this.only_ftp_select.Text = "只选ftp链接";
             this.only_ftp_select.UseVisualStyleBackColor = true;
@@ -98,9 +116,10 @@
             // 
             // only_magnet_select
             // 
-            this.only_magnet_select.Location = new System.Drawing.Point(322, 366);
+            this.only_magnet_select.Location = new System.Drawing.Point(164, 293);
+            this.only_magnet_select.Margin = new System.Windows.Forms.Padding(2);
             this.only_magnet_select.Name = "only_magnet_select";
-            this.only_magnet_select.Size = new System.Drawing.Size(138, 27);
+            this.only_magnet_select.Size = new System.Drawing.Size(104, 22);
             this.only_magnet_select.TabIndex = 58;
             this.only_magnet_select.Text = "只选magnet链接";
             this.only_magnet_select.UseVisualStyleBackColor = true;
@@ -108,9 +127,10 @@
             // 
             // only_thunder_select
             // 
-            this.only_thunder_select.Location = new System.Drawing.Point(178, 366);
+            this.only_thunder_select.Location = new System.Drawing.Point(56, 293);
+            this.only_thunder_select.Margin = new System.Windows.Forms.Padding(2);
             this.only_thunder_select.Name = "only_thunder_select";
-            this.only_thunder_select.Size = new System.Drawing.Size(138, 27);
+            this.only_thunder_select.Size = new System.Drawing.Size(104, 22);
             this.only_thunder_select.TabIndex = 57;
             this.only_thunder_select.Text = "只选thunder链接";
             this.only_thunder_select.UseVisualStyleBackColor = true;
@@ -118,9 +138,10 @@
             // 
             // download
             // 
-            this.download.Location = new System.Drawing.Point(630, 366);
+            this.download.Location = new System.Drawing.Point(496, 293);
+            this.download.Margin = new System.Windows.Forms.Padding(2);
             this.download.Name = "download";
-            this.download.Size = new System.Drawing.Size(56, 27);
+            this.download.Size = new System.Drawing.Size(42, 22);
             this.download.TabIndex = 56;
             this.download.Text = "下载";
             this.download.UseVisualStyleBackColor = true;
@@ -128,9 +149,10 @@
             // 
             // all_select
             // 
-            this.all_select.Location = new System.Drawing.Point(91, 366);
+            this.all_select.Location = new System.Drawing.Point(10, 293);
+            this.all_select.Margin = new System.Windows.Forms.Padding(2);
             this.all_select.Name = "all_select";
-            this.all_select.Size = new System.Drawing.Size(56, 27);
+            this.all_select.Size = new System.Drawing.Size(42, 22);
             this.all_select.TabIndex = 55;
             this.all_select.Text = "全选";
             this.all_select.UseVisualStyleBackColor = true;
@@ -147,10 +169,9 @@
             this.global_list.FullRowSelect = true;
             this.global_list.GridLines = true;
             this.global_list.HideSelection = false;
-            this.global_list.Location = new System.Drawing.Point(4, 4);
-            this.global_list.Margin = new System.Windows.Forms.Padding(4);
+            this.global_list.Location = new System.Drawing.Point(3, 3);
             this.global_list.Name = "global_list";
-            this.global_list.Size = new System.Drawing.Size(802, 355);
+            this.global_list.Size = new System.Drawing.Size(602, 285);
             this.global_list.TabIndex = 54;
             this.global_list.UseCompatibleStateImageBehavior = false;
             this.global_list.View = System.Windows.Forms.View.Details;
@@ -172,9 +193,10 @@
             // 
             // html_import
             // 
-            this.html_import.Location = new System.Drawing.Point(735, 12);
+            this.html_import.Location = new System.Drawing.Point(551, 10);
+            this.html_import.Margin = new System.Windows.Forms.Padding(2);
             this.html_import.Name = "html_import";
-            this.html_import.Size = new System.Drawing.Size(83, 27);
+            this.html_import.Size = new System.Drawing.Size(62, 22);
             this.html_import.TabIndex = 5;
             this.html_import.Text = "html导入";
             this.html_import.UseVisualStyleBackColor = true;
@@ -182,14 +204,15 @@
             // 
             // 迅雷下载地址抓取器
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 450);
+            this.ClientSize = new System.Drawing.Size(616, 360);
             this.Controls.Add(this.html_import);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.url_sure);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.url);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "迅雷下载地址抓取器";
             this.Text = "迅雷下载链接抓取器v0.0.3";
             this.panel1.ResumeLayout(false);
@@ -214,6 +237,7 @@
         private System.Windows.Forms.Button only_thunder_select;
         private System.Windows.Forms.Button html_import;
         private System.Windows.Forms.Button only_ftp_select;
+        private System.Windows.Forms.Button only_ed2k_select;
     }
 }
 
